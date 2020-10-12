@@ -726,6 +726,7 @@ static int const RCTVideoUnset = -1;
     if([keyPath isEqualToString:playbackRate]) {
       if(self.onPlaybackRateChange) {
         self.onPlaybackRateChange(@{@"playbackRate": [NSNumber numberWithFloat:_player.rate],
+        @"currentTime": [NSNumber numberWithFloat:CMTimeGetSeconds(_playerItem.currentTime)],
                                     @"target": self.reactTag});
       }
       if(_playbackStalled && _player.rate > 0) {
