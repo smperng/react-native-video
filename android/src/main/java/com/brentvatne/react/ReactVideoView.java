@@ -158,7 +158,7 @@ public class ReactVideoView extends ScalableVideoView implements
             @Override
             public void run() {
 
-                if (mMediaPlayerValid && !isCompleted && !mPaused && !mBackgroundPaused) {
+                if (mMediaPlayerValid /* && !isCompleted */ && !mPaused && !mBackgroundPaused) {
                     WritableMap event = Arguments.createMap();
                     event.putDouble(EVENT_PROP_CURRENT_TIME, mMediaPlayer.getCurrentPosition() / 1000.0);
                     event.putDouble(EVENT_PROP_PLAYABLE_DURATION, mVideoBufferedDuration / 1000.0); //TODO:mBufferUpdateRunnable
